@@ -1,14 +1,21 @@
 package com.example.chapter25.unit1;
 
-public class Visitor implements IVisitor {
+public class ShowVisitor implements IShowVisitor {
+  private String info = "";
+
+  @Override
+  public void report() {
+    System.out.println(this.info);
+  }
+
   @Override
   public void visit(CommonEmployee commonEmployee) {
-    System.out.println(this.getCommonEmployeeInfo(commonEmployee));
+    this.info += "\n" + this.getCommonEmployeeInfo(commonEmployee);
   }
 
   @Override
   public void visit(Manager manager) {
-    System.out.println(this.getManagerInfo(manager));
+    this.info += "\n" + this.getManagerInfo(manager);
   }
 
   public String getBasicInfo(Employee employee) {
