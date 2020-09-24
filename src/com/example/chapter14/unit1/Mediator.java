@@ -17,6 +17,8 @@ public class Mediator extends AbstractMediator {
       case "stock.clear":
         this.clearStock();
         break;
+      default:
+        break;
     }
   }
 
